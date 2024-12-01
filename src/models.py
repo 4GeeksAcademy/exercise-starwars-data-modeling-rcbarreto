@@ -51,6 +51,9 @@ class Favorite(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     character_id = Column(Integer, ForeignKey('character.id'))
     planet_id = Column(Integer, ForeignKey('planet.id'))
+    user = relationship('User', backref='favorites')  
+    character = relationship('Character', backref='favorites')   
+    planet = relationship('Planet', backref='favorites')
     
 
 ## Draw from SQLAlchemy base
